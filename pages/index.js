@@ -16,7 +16,7 @@ export default function Home({ posts }) {
       <main>
         <div className={styles.container}>
           {posts.length === 0 ? (
-            <h2>No added posts</h2>
+            <h2>No added posts </h2>
           ) : (
             <ul>
               {posts.map((post, i) => (
