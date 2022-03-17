@@ -37,8 +37,18 @@ export async function getServerSideProps(ctx) {
 
   // request posts from api
   let response = await fetch(`${dev ? DEV_URL : PROD_URL}/api/posts`);
+
   // extract the data
   let data = await response.json();
+
+  if (!data) {
+    return {
+      redirect: {
+        destination: "/",
+        permanent: false,
+      },
+    };
+  }
 
   return {
     props: {
