@@ -8,7 +8,7 @@ export default function Home({ posts }) {
   return (
     <div>
       <Head>
-        <title>Home</title>
+        <title>HOME</title>
       </Head>
 
       <Nav />
