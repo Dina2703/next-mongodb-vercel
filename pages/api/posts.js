@@ -2,6 +2,7 @@ const { connectToDatabase } = require("../../lib/mongodb");
 const ObjectId = require("mongodb").ObjectId;
 
 export default async function handler(req, res) {
+  res.status(200).JSON.parse(JSON.stringify(posts));
   // switch the methods
   switch (req.method) {
     case "GET": {
