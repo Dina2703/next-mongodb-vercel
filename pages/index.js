@@ -41,15 +41,6 @@ export async function getServerSideProps(ctx) {
   // extract the data
   let data = await response.json();
 
-  if (!data) {
-    return {
-      redirect: {
-        destination: "/",
-        permanent: false,
-      },
-    };
-  }
-
   return {
     props: {
       posts: data["message"],
