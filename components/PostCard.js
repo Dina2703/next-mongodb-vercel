@@ -15,6 +15,7 @@ export default function PostCard({ post }) {
       // Update post
       await fetch("/api/posts", {
         method: "PUT",
+
         body: postId,
       });
 
