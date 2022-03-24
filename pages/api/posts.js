@@ -32,7 +32,6 @@ async function getPosts(req, res) {
       .find({})
       .sort({ published: -1 })
       .toArray();
-    console.log(posts);
 
     // return the posts
     return res.json({

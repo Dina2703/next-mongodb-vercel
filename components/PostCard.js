@@ -15,9 +15,7 @@ export default function PostCard({ post }) {
       // Update post
       await fetch("/api/posts", {
         method: "PUT",
-        headers: {
-          "Content-Type": "application/json;charset=utf-8",
-        },
+
         body: postId,
       });
 
