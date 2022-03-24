@@ -32,6 +32,9 @@ async function getPosts(req, res) {
       .find({})
       .sort({ published: -1 })
       .toArray();
+    console.log(posts);
+    console.log(res);
+
     // return the posts
     return res.json({
       message: JSON.parse(JSON.stringify(posts)),

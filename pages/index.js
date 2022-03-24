@@ -5,6 +5,7 @@ import PostCard from "../components/PostCard";
 import styles from "../styles/Home.module.css";
 
 export default function Home({ posts }) {
+  // console.log(posts);
   return (
     <div>
       <Head>
@@ -19,9 +20,8 @@ export default function Home({ posts }) {
             <h2>No added posts</h2>
           ) : (
             <ul>
-              {posts.map((post, i) => (
-                <PostCard post={post} key={i} />
-              ))}
+              {posts &&
+                posts.map((post, i) => <PostCard post={post} key={i} />)}
             </ul>
           )}
         </div>
@@ -37,8 +37,11 @@ export async function getServerSideProps(ctx) {
 
   // request posts from api
   let response = await fetch(`${dev ? DEV_URL : PROD_URL}/api/posts`);
+  // console.log(response);
+  console.log(response.headers.get("content-type"));
   // extract the data
   let data = await response.json();
+  console.log(response.headers.get("content-type"));
 
   return {
     props: {
