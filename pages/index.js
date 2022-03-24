@@ -8,7 +8,7 @@ export default function Home({ posts }) {
   return (
     <div>
       <Head>
-        <title>HOME</title>
+        <title>Home</title>
       </Head>
 
       <Nav />
@@ -16,7 +16,7 @@ export default function Home({ posts }) {
       <main>
         <div className={styles.container}>
           {posts.length === 0 ? (
-            <h2>No added posts </h2>
+            <h2>No added posts</h2>
           ) : (
             <ul>
               {posts.map((post, i) => (
@@ -37,7 +37,6 @@ export async function getServerSideProps(ctx) {
 
   // request posts from api
   let response = await fetch(`${dev ? DEV_URL : PROD_URL}/api/posts`);
-
   // extract the data
   let data = await response.json();
 
