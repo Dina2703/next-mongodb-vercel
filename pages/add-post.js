@@ -29,6 +29,9 @@ export default function AddPost() {
     // save the post
     let response = await fetch("/api/posts", {
       method: "POST",
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+      },
       body: JSON.stringify(post),
     });
 

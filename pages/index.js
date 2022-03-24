@@ -41,7 +41,6 @@ export async function getServerSideProps(ctx) {
   console.log(response.headers.get("content-type"));
   // extract the data
   let data = await response.json();
-  console.log(response.headers.get("content-type"));
 
   return {
     props: {
